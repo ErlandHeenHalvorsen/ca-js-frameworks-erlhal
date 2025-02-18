@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./fetchstore.css";
 
 function FetchStore() {
   const [items, setItems] = useState([]);
@@ -42,9 +43,16 @@ function FetchStore() {
   return (
     <>
       {items.map((item) => (
-        <div key={item.id}>
+        <div className="store-element" key={item.id}>
+          <div>
+            <img src={item.image.url} alt="" />
+          </div>
           <div>
             <h1>{item.title}</h1>
+          </div>
+          <div>
+            <p>${item.price}</p>
+            <button>Buy</button>
           </div>
         </div>
       ))}
