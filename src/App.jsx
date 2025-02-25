@@ -3,15 +3,16 @@ import { BrowserRouter as Router, Routes, Route } from "react-router";
 import React from "react";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Header from "./components/header/Header";
+import Layout from "./components/header/Layout";
 
 function App() {
   return (
     <Router>
-      <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/About" element={<About />} />
+        <Route path="/" element={<Layout />} >
+          <Route index element={<Home />} />
+          <Route path="/About" element={<About />} />
+        </Route>
       </Routes>
     </Router>
   );
