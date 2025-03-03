@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import useAPI from "../hooks/useAPI";
 import useProductStore from "../components/productStore";
+import ProductCard from "../components/ProductCards";
 import "./fetchstore.css";
 
 function FetchStore() {
@@ -9,6 +10,7 @@ function FetchStore() {
   const setProducts = useProductStore((state) => state.setProducts);
   const addToCart = useProductStore((state) => state.addToCart);
   const cart = useProductStore((state) => state.shoppingCart);
+  
 
   useEffect(() => {
     if (data) {
@@ -23,21 +25,11 @@ function FetchStore() {
 
   return (
     <>
-      {items.map((item) => (
-        <div className="store-element" key={item.id}>
-          <div>
-            <img src={item.image.url} alt="" />
-          </div>
-          <div>
-            <h1>{item.title}</h1>
-          </div>
-          <div>
-            <p>${item.price}</p>
-            <button onClick={() => addToCart(item)}>Add to cart</button>
-          </div>
-          <p>Cart: {cart.length}</p>
-        </div>
-      ))}
+      <div className="product-list">
+        {items.map((products) => (
+          <ProductCard key={products.id} product={products} />
+        ))}
+      </div>
     </>
   );
 }
