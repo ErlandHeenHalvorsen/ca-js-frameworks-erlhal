@@ -1,44 +1,25 @@
 import { useEffect, useState } from "react";
+import useAPI from "../hooks/useAPI";
+import useProductStore from "../components/productStore";
 import "./fetchstore.css";
 
 function FetchStore() {
   const [items, setItems] = useState([]);
+  const { data, loading, error } = useAPI("https://v2.api.noroff.dev/online-shop/");
+  const setProducts = useProductStore((state) => state.setProducts);
+  const addToCart = useProductStore((state) => state.addToCart);
+  const cart = useProductStore((state) => state.shoppingCart);
 
   useEffect(() => {
-    const fetchItems = async () => {
-      try {
-        const response = await fetch("https://v2.api.noroff.dev/online-shop/");
-        const data = await response.json();
-        console.log("Fetched data:", data);
-        const productsArray = Array.isArray(data.data) ? data.data : [];
-        setItems(productsArray);
-      } catch (error) {
-        console.error(error.message);
-      }
-    };
-    fetchItems();
-  }, []);
-
-  /* useEffect(() => {
-    fetch("https://v2.api.noroff.dev/online-shop/")
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Fetched data:", data); // Log the data to see its structure
-        if (Array.isArray(data.data)) {
-          setItems(data.data);
-        } else {
-          console.error("Data is not an array:", data);
-        }
-      })
-      .catch((error) => console.error(error.message));
-  }, []); */
-
-  if (items.length === 0)
-    return (
-      <div>
-        <p>Fetching Store...</p>
-      </div>
-    );
+    if (data) {
+      console.log("Data from API:", data);
+      const productsArray = data.data;
+      setItems(productsArray);
+      setProducts(productsArray);
+    }
+  }, [data, setProducts]);
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error.message}</p>
 
   return (
     <>
@@ -52,8 +33,9 @@ function FetchStore() {
           </div>
           <div>
             <p>${item.price}</p>
-            <button>Buy</button>
+            <button onClick={() => addToCart(item)}>Add to cart</button>
           </div>
+          <p>Cart: {cart.length}</p>
         </div>
       ))}
     </>

@@ -1,0 +1,23 @@
+import { create } from "zustand";
+import { persist } from "zustand/middleware";
+
+const useProductStore = create(
+    persist(
+        (set) => ({
+            products: [],
+            shoppingCart: [],
+
+            setProducts: (products) => set({ products }),
+            addToCart: (products) =>
+                set((state) => ({
+                    shoppingCart: state.shoppingCart.find((f) => f.id === products.id)
+                        ? state.shoppingCart
+                        : [...state.shoppingCart, products],
+                })),
+        }), {
+        name: "product-store",
+    }
+    )
+);
+
+export default useProductStore;
