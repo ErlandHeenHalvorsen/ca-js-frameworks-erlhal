@@ -16,7 +16,7 @@ const ProductCard = ({ product }) => {
           </div>
           <div>
             <p>${product.price}</p>
-            <button>View Product</button>
+            <Link to={`/SingleProduct/${product.id}`}>View</Link>
           </div>
               <p>{ isInCart ? "inCart" : "notInCart"}</p>
         </div>
