@@ -1,13 +1,19 @@
-import FetchStore from "../API/FetchStore";
-import "../app.css";
 
-export default function Home() {
+import React, { useState } from "react";
+import FetchStore from "../components/FetchStore";
+
+
+
+ function Home() {
+  
+
   return (
     <div>
-      <h1>Home</h1>
-      <main className="home-store-section">
-        <FetchStore />
+      <main>
+        <FetchStore  />
       </main>
     </div>
   );
 }
+
+export default Home;

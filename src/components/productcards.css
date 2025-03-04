@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+
+.product-list {
+    @apply flex flex-wrap justify-center gap-4 p-4;
+}
+.store-element {
+  @apply flex flex-col w-xs h-auto bg-gray-900 shadow-lg rounded-lg overflow-hidden m-4 p-4;
+}
+.image {
+    @apply w-full h-72 object-cover object-center;
+}

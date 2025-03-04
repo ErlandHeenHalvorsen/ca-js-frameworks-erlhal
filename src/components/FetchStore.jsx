@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import useAPI from "../hooks/useAPI";
-import useProductStore from "../components/productStore";
-import ProductCard from "../components/ProductCards";
-import "./fetchstore.css";
+import useProductStore from "./productStore";
+import ProductCard from "./ProductCards";
+import "./productcards.css";
+
 
 function FetchStore() {
   const [items, setItems] = useState([]);
@@ -22,6 +23,7 @@ function FetchStore() {
   }, [data, setProducts]);
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>
+  
 
   return (
     <>

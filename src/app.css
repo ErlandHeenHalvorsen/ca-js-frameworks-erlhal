@@ -1,5 +1,0 @@
-@import "tailwindcss";
-
-.home-store-section {
-  @apply flex flex-wrap justify-center gap-4 p-4;
-}

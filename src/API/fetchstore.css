@@ -1,5 +1,0 @@
-@import "tailwindcss";
-
-.store-element {
-  @apply flex flex-col w-md h-auto bg-gray-900 shadow-lg rounded-lg overflow-hidden m-4 p-4;
-}

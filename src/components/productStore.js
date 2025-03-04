@@ -17,7 +17,8 @@ const useProductStore = create(
             removeFromCart: (productId) =>
                 set((state) => ({
                     shoppingCart: state.shoppingCart.filter((product) => product.id !== productId),
-                }))
+                })),
+            
         }), {
         name: "product-store",
     }
