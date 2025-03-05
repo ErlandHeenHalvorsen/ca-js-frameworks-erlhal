@@ -23,12 +23,13 @@ const SingleProduct = () => {
     console.log(product)
 
     return (
-        <>
+        <div className="single-product-card">
+            <img src={product.image.url} alt={product.title} />
             <h1>{product.title}</h1>
             <button onClick={handleCartAction}>
                 {isInCart ? "Remove from cart" : "Add to cart"}
             </button>
-        </>
+        </div>
     )
 
 }
