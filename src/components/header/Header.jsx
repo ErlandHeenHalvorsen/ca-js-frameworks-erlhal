@@ -14,9 +14,7 @@ function Header() {
       </nav>
       <div className={styles.cart}>
         <span>{cart.length}</span>
-        <Link to="/Cart"><span className="material-symbols-outlined">
-            shopping_cart_checkout
-        </span></Link>
+        <Link to="/Cart"><span className="material-symbols-outlined">shopping_cart_checkout</span></Link>
       </div>
     </header>
   );

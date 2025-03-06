@@ -5,8 +5,28 @@
     @apply flex flex-wrap justify-center gap-4 p-4;
 }
 .store-element {
-  @apply flex flex-col w-xs h-auto bg-gray-900 shadow-lg rounded-lg overflow-hidden m-4 p-4;
+  @apply flex flex-col w-sm h-auto shadow-lg rounded-lg overflow-hidden m-2 p-1;
+  background-color: #333;
 }
 .image {
-    @apply w-full h-72 object-cover object-center;
+    @apply w-full h-72 object-cover object-center rounded;
 }
+.card-title {
+    @apply text-white text-lg font-semibold my-1;
+}
+.price-view {
+  @apply flex justify-between items-center;
+}
+.toggle-cart-icon {
+  @apply cursor-pointer text-2xl;
+  color: #646cff;
+}
+.toggle-cart-icon:hover {
+  color: #535bf2;
+}
+
+.view-link-container {
+  @apply flex;
+}
+
+
