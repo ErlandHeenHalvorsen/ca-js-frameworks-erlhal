@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 .footer {
-  @apply flex flex-col items-center justify-center  p-2;
+  @apply flex flex-col items-center justify-center  p-2 mt-10;
   position:relative;
   bottom: 0;
   width: 100%;

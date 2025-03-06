@@ -12,6 +12,7 @@ function FetchStore() {
 
   const { data, loading, error } = useAPI(`https://v2.api.noroff.dev/online-shop/`);
   const setProducts = useProductStore((state) => state.setProducts);
+  const filterProducts = useProductStore((state) => state.filterProducts);
   
   
 
