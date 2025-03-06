@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+/* checkout-form.css */
+.checkout-form {
+  @apply max-w-lg mx-auto p-6  shadow-lg rounded-lg;
+}
+
+.checkout-form h2 {
+  @apply text-2xl font-bold mb-4 text-center;
+}
+
+.checkout-form ul {
+  @apply mb-4 border p-4 rounded bg-gray-600;
+}
+
+.checkout-form li {
+  @apply text-lg font-medium flex justify-between py-2 border-b last:border-none;
+}
+
+.checkout-form p {
+  @apply text-xl font-semibold mt-4 text-right;
+}
+
+.checkout-form form {
+  @apply flex flex-col gap-4;
+}
+
+.checkout-form div {
+  @apply flex flex-col;
+}
+
+.checkout-form label {
+  @apply font-semibold mb-1;
+}
+
+.checkout-form input {
+  @apply p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
+
+.checkout-form button {
+  @apply mt-4 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition duration-200;
+}

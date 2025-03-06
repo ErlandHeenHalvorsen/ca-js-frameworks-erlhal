@@ -1,14 +1,22 @@
 import React from "react"
-import useProductStore from "./productStore"
+import { useNavigate } from "react-router";
+import useProductStore from "../productStore"
+import './forms.css'
 
 const CheckoutForm = () => {
     const cart = useProductStore((state) => state.shoppingCart);
-    
+    const navigate = useNavigate();
+
     const calculateTotal = () => {
         return cart.reduce((total, product) => total + product.price, 0);
     };
 
     const totalValue = calculateTotal();
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        navigate("/CheckoutSuccs")
+    }
     return (
         <div className="checkout-form">
             <h2>Checkout</h2>
@@ -20,7 +28,7 @@ const CheckoutForm = () => {
                 ))}
             </ul>
             <p>Total: ${totalValue.toFixed(2)}</p>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="name">Name:</label>
                     <input type="text" id="name" name="name" required />

@@ -1,6 +1,33 @@
+@import "tailwindcss";
+/* cart.css */
 .cart {
-    display: flex;
-    justify-content: space-between;
-    padding: 5px;
-    border-bottom: 1px solid #ccc;
+  @apply max-w-3xl mx-auto p-6 shadow-lg rounded-lg;
+}
+
+.cart h1 {
+  @apply text-3xl font-bold mb-4 text-center;
+}
+
+.cart ul {
+  @apply divide-y divide-gray-800;
+}
+
+.cart-item {
+  @apply flex justify-between items-center p-4 rounded-lg shadow-sm my-2;
+}
+
+.cart-item h2 {
+  @apply text-lg font-semibold;
+}
+
+.cart-item p {
+  @apply text-gray-200;
+}
+
+.cart-item button {
+  @apply bg-red-500 text-white py-1 px-3 rounded hover:bg-red-600 transition duration-200;
+}
+
+.checkout-btn {
+  @apply block w-full mt-4 text-center py-2 px-4;
 }
