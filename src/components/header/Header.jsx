@@ -7,9 +7,10 @@ function Header() {
   return (
     <header className={styles.header}>
       <h1 className={styles.title}>My App</h1>
+      
       <nav className={styles.header_nav}>
         <Link className={styles.header_link} to="/">Home</Link>
-        <Link className={styles.header_link} to="/About">About</Link>
+        <Link className={styles.header_link} to="/About">Contact</Link>
       </nav>
       <div className={styles.cart}>
         <span>{cart.length}</span>

@@ -8,6 +8,12 @@ const useProductStore = create(
             shoppingCart: [],
 
             setProducts: (products) => set({ products }),
+            filterProducts: (query) =>
+                set((state) => ({
+                    products: state.products.filter((product) =>
+                        product.title.toLowerCase().includes(query.toLowerCase())
+                    ),
+                })),
             addToCart: (products) =>
                 set((state) => ({
                     shoppingCart: state.shoppingCart.find((f) => f.id === products.id)
