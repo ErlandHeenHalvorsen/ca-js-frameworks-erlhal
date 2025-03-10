@@ -1,22 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import useProductStore from "../productStore";
-import styles from "./header.module.css";
+import { useState } from "react";
+import Nav from "./Nav";
+import "./header.css";
 
 function Header() {
-  const cart = useProductStore((state) => state.shoppingCart);
   return (
-    <header className={styles.header}>
-      <h1 className={styles.title}>My App</h1>
+    <header className="sticky bg-[#333] top-0 z-[20] mx-auto p-4 flex flex-wrap w-full items-center justify-between">
       
-      <nav className={styles.header_nav}>
-        <Link className={styles.header_link} to="/">Home</Link>
-        <Link className={styles.header_link} to="/About">Contact</Link>
-      </nav>
-      <div className={styles.cart}>
-        <span>{cart.length}</span>
-        <Link to="/Cart"><span className="material-symbols-outlined">shopping_cart_checkout</span></Link>
-      </div>
+        <Link to="/" className="text-xl font-bold text-[#FAFAFA]!"><h1>TheShop</h1></Link>
+        < Nav />
+      
     </header>
-  );
+  ) 
 }
+
 export default Header;

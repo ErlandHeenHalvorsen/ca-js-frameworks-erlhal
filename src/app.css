@@ -1,7 +1,7 @@
 @import "tailwindcss";
 /* cart.css */
 .cart {
-  @apply max-w-3xl mx-auto p-6 shadow-lg rounded-lg;
+  @apply max-w-3xl mx-auto p-6;
 }
 
 .cart h1 {
@@ -9,11 +9,11 @@
 }
 
 .cart ul {
-  @apply divide-y divide-gray-800;
+  @apply mb-4 border p-4 rounded;
 }
 
 .cart-item {
-  @apply flex justify-between items-center p-4 rounded-lg shadow-sm my-2;
+  @apply flex justify-between items-center bg-[#333] p-4 rounded-lg shadow-md my-2;
 }
 
 .cart-item h2 {
@@ -25,9 +25,50 @@
 }
 
 .cart-item button {
-  @apply bg-red-500 text-white py-1 px-3 rounded hover:bg-red-600 transition duration-200;
+  @apply bg-red-500 cursor-pointer text-white py-1 px-3 rounded hover:bg-red-600 transition duration-200;
 }
 
 .checkout-btn {
   @apply block w-full mt-4 text-center py-2 px-4;
+}
+.info-container {
+  max-width: 1000px;
+  margin: 0 ;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.info-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #efefef;
+}
+
+.info-container p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #efefef;
+}
+
+.info-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.info-container ul li {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #efefef;
+}
+
+.info-container ul li::before {
+  content: "✅";
+  margin-right: 10px;
+  color: #28a745;
+}
+
+.info-container strong {
+  color: #efefef;
 }

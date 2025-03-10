@@ -20,6 +20,7 @@ const useProductStore = create(
                     shoppingCart: state.shoppingCart.filter((product) => product.id !== productId),
                 })),
             
+            
         }), {
         name: "product-store",
     }

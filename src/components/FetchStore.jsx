@@ -4,17 +4,16 @@ import useProductStore from "./productStore";
 import ProductCard from "./ProductCards";
 import "./productcards.css";
 
-
 function FetchStore() {
   const [items, setItems] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [allProducts, setAllProducts] = useState([]);
 
-  const { data, loading, error } = useAPI(`https://v2.api.noroff.dev/online-shop/`);
+  const { data, loading, error } = useAPI(
+    `https://v2.api.noroff.dev/online-shop/`
+  );
   const setProducts = useProductStore((state) => state.setProducts);
   const filterProducts = useProductStore((state) => state.filterProducts);
-  
-  
 
   useEffect(() => {
     if (data) {
@@ -32,27 +31,26 @@ function FetchStore() {
     if (!query) {
       setItems(allProducts);
     } else {
-      const filtered = allProducts.filter((product) => 
+      const filtered = allProducts.filter((product) =>
         product.title.toLowerCase().includes(query)
       );
       setItems(filtered);
     }
-  }
+  };
 
   if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error.message}</p>
-
-  
+  if (error) return <p>Error: {error.message}</p>;
 
   return (
     <>
       <div>
         <input
-        type="text"
-        placeholder="Search products..."
-        value={searchQuery}
-        onChange={handleSearch}
-      />
+          className="search-bar"
+          type="text"
+          placeholder="Search products..."
+          value={searchQuery}
+          onChange={handleSearch}
+        />
       </div>
       <div className="product-list">
         {items.map((products) => (

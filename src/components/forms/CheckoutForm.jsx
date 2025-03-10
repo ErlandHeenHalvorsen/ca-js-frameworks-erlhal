@@ -23,7 +23,7 @@ const CheckoutForm = () => {
             <ul>
                 {cart.map((product) => (
                     <li key={product.id}>
-                        {product.name} - ${product.price.toFixed(2)}
+                        {product.title} - ${product.price.toFixed(2)}
                     </li>
                 ))}
             </ul>

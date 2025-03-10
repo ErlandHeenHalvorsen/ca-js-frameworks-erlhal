@@ -1,18 +1,17 @@
 @import "tailwindcss";
 
-
 .product-list {
-    @apply flex flex-wrap justify-center gap-4 p-4;
+  @apply flex flex-wrap justify-center gap-4 p-4;
 }
 .store-element {
   @apply flex flex-col w-sm h-auto shadow-lg rounded-lg overflow-hidden m-2 p-1;
   background-color: #333;
 }
 .image {
-    @apply w-full h-72 object-cover object-center rounded;
+  @apply w-full h-72 object-cover object-center rounded;
 }
 .card-title {
-    @apply text-white text-lg font-semibold my-1;
+  @apply text-white text-lg font-semibold my-1;
 }
 .price-view {
   @apply flex justify-between items-center;
@@ -28,5 +27,20 @@
 .view-link-container {
   @apply flex;
 }
+.search-bar {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  margin: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
 
-
+.search-bar:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+  outline: none;
+}
