@@ -11,11 +11,17 @@ const CheckoutForm = () => {
         return cart.reduce((total, product) => total + product.price, 0);
     };
 
+    const clearCart = useProductStore((state) => state.clearCart);
+
     const totalValue = calculateTotal();
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        navigate("/CheckoutSuccs")
+        const confirmation = window.confirm("Place order?");
+        if (confirmation) {
+            clearCart();
+            navigate("/CheckoutSuccs")
+        }
     }
     return (
         <div className="checkout-form">

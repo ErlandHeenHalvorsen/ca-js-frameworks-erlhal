@@ -19,6 +19,7 @@ const useProductStore = create(
                 set((state) => ({
                     shoppingCart: state.shoppingCart.filter((product) => product.id !== productId),
                 })),
+            clearCart: () => set({ shoppingCart: [] }),
             
             
         }), {

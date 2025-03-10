@@ -1,4 +1,20 @@
 @import "tailwindcss";
 
 
+.full-title {
+  display: inline;
+}
 
+.short-title {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .full-title {
+    display: none;
+  }
+
+  .short-title {
+    display: inline;
+  }
+}
