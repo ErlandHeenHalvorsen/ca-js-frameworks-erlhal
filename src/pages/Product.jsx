@@ -31,7 +31,7 @@ const Product = () => {
         <span>${product.price}</span>
     );
 
-    console.log(product);
+
 
     return (
         <>
